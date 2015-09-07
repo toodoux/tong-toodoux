@@ -1,3 +1,5 @@
+var lang = 'fr';
+
 $(function() {
     // Configuration, textes et traductions
     var config = { // Configuration principale
@@ -9,6 +11,7 @@ $(function() {
         facebook : "https://www.facebook.com/tongtoodoux", // Lien vers la page facebook
         twitter : "https://twitter.com/tongtoodoux", // Lien vers la page twitter
         github : "https://github.com/mrPain89/tong-toodoux/tree/gh-pages", // Lien vers la page github (hebergeur)
+        email : "toodoux@laposte.net", // Adresse e-mail
         button : { //Configuration du bouton
             text : { // Texte contenu dans le bouton
                 fr : "Choisir Ma Tong",
@@ -22,6 +25,21 @@ $(function() {
             "IllegalMasculineBuffalo",
             "DirectPracticalAlleycat",
             "BrightDirectIchneumonfly"
+        ],
+        languages : [
+            {
+                id : "fr",
+                txt : "Francais",
+                icon : "http://i.imgur.com/lRlYosv.png"
+            }, {
+                id : "en",
+                txt : "English",
+                icon : "http://i.imgur.com/rXb7txF.png"
+            }, {
+                id : "ger",
+                txt : "Deutsch",
+                icon : "http://i.imgur.com/rq47vrP.png"
+            }
         ]
     },meta = { // Meta-données (pour les moteurs de recherche)
         title : "La Tong D'Hiver Toodoux, par Pascal Nicolazo", // Titre du site (apparait dans la barre de titre du navigateur ainsi que sur les moteur de recherche en gros)
@@ -115,30 +133,100 @@ $(function() {
             },
             items : [ // Configuration des boutons
                 {
+                    id : "size",
                     title : { // Titre du bouton
                         fr : "Taille",
                         en : "Size",
-                        ger : "Taille2"
+                        ger : "Taille"
                     },
                     description : { // Description du bouton, apparaît en dessous
                         fr : "ma pointure",
                         en : "of my feet",
                         ger : "vum die fuss"
                     },
-                    icon : "http://i.imgur.com/bLGlfUu.png" // Image à utiliser pour le bouton
+                    icon : "http://i.imgur.com/bLGlfUu.png", // Image à utiliser pour le bouton
+                    data : [
+                        { size : 20, model : "kid", price : 38 },
+                        { size : 22, model : "kid", price : 38 },
+                        { size : 24, model : "kid", price : 38 },
+                        { size : 26, model : "kid", price : 38 },
+                        { size : 28, model : "kid", price : 38 },
+                        { size : 30, model : "kid", price : 38 },
+                        { size : 32, model : "kid", price : 38 },
+                        { size : 34, model : "kid", price : 38 },
+                        { size : 36, model : "woman", price : 47 },
+                        { size : 38, model : "woman", price : 47 },
+                        { size : 40, model : "woman", price : 47 },
+                        { size : 42, model : "man", price : 47 },
+                        { size : 44, model : "man", price : 47 },
+                        { size : 46, model : "man", price : 47 },
+                    ]
                 }, {
+                    id : "color",
                     title : {
                          fr : "Couleur",
                          en : "Color",
                          ger : "Farbe"
                     },
                     description : {
-                        fr : "gers brides",
-                        en : "gers brides",
+                        fr : "des brides",
+                        en : "des brides",
                         ger : "des brides"
                     },
-                    icon : "http://i.imgur.com/8zhn6Q1.png"
+                    icon : "http://i.imgur.com/8zhn6Q1.png",
+                    data : [
+                        {
+                            id : "blue",
+                            name : {
+                                fr : "Bleu",
+                                en : "Blue",
+                                ger : "Blau"
+                            },
+                            models : [
+                                "kid",
+                                "man"
+                            ]
+                        },
+                        {
+                            id : "pink",
+                            name : {
+                                fr : "Rose",
+                                en : "Pink",
+                                ger : "Rosa"
+                            },
+                            models : [
+                                "kid",
+                                "woman",
+                            ]
+                        },
+                        {
+                            id : "black",
+                            name : {
+                                fr : "Noir",
+                                en : "Black",
+                                ger : "Schwarz"
+                            },
+                            models : [
+                                "woman",
+                                "man"
+                            ]
+                        },
+                        {
+                            id : "white",
+                            name : {
+                                fr : "Blanc",
+                                en : "White",
+                                ger : "Weiß"
+                            },
+                            models : [
+                                "kid",
+                                "woman",
+                                "man"
+                            ]
+                        }
+                    ]
                 }, {
+                    id : "skin",
                     title : {
                         fr : "Peau",
                         en : "Peau",
@@ -149,7 +237,63 @@ $(function() {
                         en : "pour habiller",
                         ger : "pour habiller"
                     },
-                    icon : "http://i.imgur.com/l15mGeX.png"
+                    icon : "http://i.imgur.com/l15mGeX.png",
+                    data : [
+                        {
+                            id : "charolais",
+                            name : {
+                                fr : "Charolais",
+                                en : "Charolais",
+                                ger : "Charolais"
+                            },
+                            icon : "http://i.imgur.com/qu3HZ0l.png"
+                        },
+                        {
+                            id : "bretonne",
+                            name : {
+                                fr : "Bretonne",
+                                en : "Bretonne",
+                                ger : "Bretonne"
+                            },
+                            icon : "http://i.imgur.com/YDufRzV.png"
+                        },
+                        {
+                            id : "tarentaise",
+                            name : {
+                                fr : "Tarentaise",
+                                en : "Tarentaise",
+                                ger : "Tarentaise"
+                            },
+                            icon : "http://i.imgur.com/SkdgvUn.png"
+                        },
+                        {
+                            id : "montbeliard",
+                            name : {
+                                fr : "Montbéliarde",
+                                en : "Montbéliarde",
+                                ger : "Montbéliarde"
+                            },
+                            icon : "http://i.imgur.com/OVBMP71.png"
+                        },
+                        {
+                            id : "camarguaise",
+                            name : {
+                                fr : "Camarguaise",
+                                en : "Camarguaise",
+                                ger : "Camarguaise"
+                            },
+                            icon : "http://i.imgur.com/wJXnbXu.png"
+                        },
+                        {
+                            id : "surprise",
+                            name : {
+                                fr : "Surprise",
+                                en : "Surprise",
+                                ger : "Surprise"
+                            },
+                            icon : "http://i.imgur.com/G0l1aWz.png"
+                        }
+                    ]
                 }
             ]
         },
@@ -238,15 +382,21 @@ $(function() {
      headtemplate = _.template($('#head-template').html()),
      navtemplate = _.template($('#nav-template').html()),
      maintemplate = _.template($('#main-template').html()),
-     footertemplate = _.template($('#footer-template').html()),
+     footertemplate = _.template($('#footer-template').html());
      
-    // Recupération du cookie de language, s'il existe, sinon récupère la valeur de "lang" dans l'url, sinon prend le default, 'fr'
-     lang = $.cookie('lang') ? $.cookie('lang') : 'fr',
      
     // Fonction qui charge une vidéo aléatoire dans la liste de la variable config.videos
-     gfyShow = function() {
+    var  gfyShow = function() {
         $(".videos .gfyitem").attr("data-id",config.videos[Math.floor(Math.random() * config.videos.length)]);
-    };    
+    }, getSection = function(s) {
+        for (i in sections) {
+            if (i.id == s)
+                return i;
+        }
+    };
+
+    // Recupération du cookie de language, s'il existe, sinon récupère la valeur de "lang" dans l'url, sinon prend le default, 'fr'
+    lang = $.cookie('lang') ? $.cookie('lang') : lang;
 
     // Insertion des templates avec les variables dont ils ont besoin
     // <head>
@@ -282,5 +432,13 @@ $(function() {
     $('.portfolio-link').click(function(e) {
         e.preventDefault();
         $(this).ekkoLightbox();
+    });
+    
+    // Script choose section
+    $('.choose-icon').click(function() {
+        var section = $(this).attr('rel');
+        $(this).slideToggle(function() {
+            $('#' + section).slideToggle();
+        });
     });
 });

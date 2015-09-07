@@ -73,9 +73,9 @@
                     <% }); %>
                     <li>
                         <select id="language">
-                           <option value="fr" <% if (lang == 'fr') { %> selected="selected" <% } %>>Francais</option> 
-                           <option value="en" <% if (lang == 'en') { %> selected="selected" <% } %>>English</option>
-                           <option value="ger" <% if (lang == 'de') { %> selected="selected" <% } %>>Deutschland</option>
+                        <% _.each(config.languages, function(e, i) { %>
+                           <option value="<%= e.id %>" <% if (lang == e.id) { %> selected="selected" <% } %>><%= e.txt %></option> 
+                        <% }); %>
                         </select>
                     </li>
                 </ul>
@@ -174,13 +174,32 @@
             <% 
                 $.each(data.items, function(i, e) { 
             %>
-                    <div class="col-md-4">
+                    <div class="col-md-4 choose-icon" rel="<%= e.id %>">
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                             <img class="icon" src="<%= e.icon %>" />
                         </span>
                         <h4 class="service-heading"><%= e.title[lang] %></h4>
                         <p class="text-muted"><%= e.description[lang] %></p>
+                    </div>
+                    <div class="col-md-4 choose-section" id="<%= e.id %>" >
+                        <h4 class="service-heading"><%= e.title[lang] %></h4>
+                        <div class="button-container">
+                        <% $(e.data).each(function(j, f) { 
+                            switch (e.id) {
+                                case 'size' : %>
+                                    <button class="sizebutton <%= f.model %>" data-price="<%= f.price %>" data-model="<%= f.model %>" value="<%= f.size %>"><%= f.size %></button>
+                                    <% break;
+                                case 'color' : %>
+                                    <button class="colorbutton <%= f.id %>" data-name="<%= f.name[lang] %>" data-models="<% JSON.stringify(f.models) %>" value="<%= f.id %>"></button>
+                                    <% break;
+                                case 'skin' : %>
+                                    <button class="skinbutton <%= f.id %>" data-name="<%= f.name[lang] %>" value="<%= f.id %>" style="background-image : url(<%= f.icon %>);"></button>
+                                    <% break;
+                           }
+                        }); %>
+                        </div>
+
                     </div>
         <% 
             }); 
@@ -299,6 +318,7 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="<%= data.item.img %> " class="img-responsive img-circle" alt="">
+                        <h4><%= data.item.name %></h4>
                         <h4><%= data.item.role[lang] %></h4>
                         <p class="text-muted"><%= data.item.description[lang] %></p>
                         <ul class="list-inline social-buttons">

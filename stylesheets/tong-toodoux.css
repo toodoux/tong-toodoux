@@ -1,3 +1,4 @@
+/* Navigation */
 .navbar-right {
     margin-right : 0;
 }
@@ -7,8 +8,13 @@
     margin : 15px 15px;
 }
 
+#language li {
+    background-size : contain;
+}
+
+/* Header - Accueil */
 header {
-    background-image : url('http://i.imgur.com/tjyLJQB.jpg');
+    background-image : url('http://i.imgur.com/tjyLJQB.jpg'); /* Image de fond */
     background-repeat : no-repeat;
     background-size : 100% auto ;
 }
@@ -45,23 +51,22 @@ header .videos {
     }
 }
 
+/* Section gallery - galerie */
 section#gallery {
-    background-color : black;
+    background-color : #00A0B0; /* Couleur de fond */
     position : relative;
     z-index : 100;
+}
+
+section#gallery .section-subheading {
+    color : #6A4A3C;
 }
 
 section#gallery .row {
     margin-top : 25px;
 }
 
-section#gallery .portfolio-link {
-}
-
-section#gallery .portfolio-link img {
-}
-
-section#gallery .portfolio-hover {
+section#gallery .portfolio-hover { /* Petit "+" sur les images */
     position : absolute;
     top : 0;
     left : 0;
@@ -71,14 +76,87 @@ section#gallery .portfolio-hover {
     padding-top : 50px;
     text-align : center;
     vertical-align : bottom;
+    color : #6A4A3C;
+    opacity : 0.8;
 }
 
-section#gallery .portfolio-hover:hover {
+section#gallery .portfolio-link:hover .portfolio-hover {
     opacity : 0.5;
 }
 
+section#gallery .portfolio-link:hover img {
+    margin-top : -10px;
+    padding-bottom : 5px;
+    border-bottom : 5px solid #6A4A3C;
+}
+
+/* Section choose - Choisir sa tong */
 section#choose {
-    background-color : #a487eb;
+    background-color : #6A4A3C;
+}
+
+section#choose .section-subheading {
+    color : #EDC951;
+}
+
+section#choose .fa-circle {
+    color : #CC333F;
+}
+
+section#choose .choose-section {
+    display : none;
+}
+
+section#choose .button-container {
+    width : 110px;
+    margin : auto;
+    padding : 0;
+}
+
+section#choose .button-container button {
+   border-radius : 50px 50px; 
+}
+
+.sizebutton {
+    background-color : #cc333f;
+    color : black;
+    font-weight : bold;
+    width : 30px;
+    height : 30px;
+    line-height : 35px;
+    padding : 0 0;
+    margin : 3px 1px;
+    border : none;
+}
+
+.colorbutton {
+    width : 40px;
+    height : 40px;
+    margin : 4px 2px;
+}
+
+.colorbutton.blue {
+   background-color : blue; 
+}
+.colorbutton.white {
+   background-color : white; 
+}
+.colorbutton.black {
+   background-color : black; 
+}
+.colorbutton.pink {
+   background-color : pink; 
+}
+
+.skinbutton {
+    height : 40px;
+    width : 40px;
+    margin : 4px 2px;
+}
+
+section#choose .button-container button:hover,
+section#choose .button-container button.active {
+    background-color : #EDC951;
 }
 
 section#choose .icon {
@@ -88,16 +166,28 @@ section#choose .icon {
     line-height : 1em;
     vertical-align : top;
     margin-top : 0.30em;
+    color : #CC333F;
 }
 
+section#choose .text-muted {
+    color : #EDC951;
+}
+
+/* Section about - Liens */
 section#about {
-    background-color : #cc333f;
+    background-color : #CC333F;
+}
+
+section#about  .timeline-image {
+    background-color : #EDC951;
+    border-color : #6A4A3C;
 }
 
 section#about  .timeline-image i {
     height : 150px;
     line-height : 150px;
     margin-top : 5px;
+    color : #EB6841;
 }
 
 section#about .timeline-twitter .timeline-panel {
@@ -112,6 +202,11 @@ section#about .timeline-adress ul {
     list-style-type : none;
 }
 
+/* Section team - Le créateur */
 section#team {
     background-color : #222;
+}
+
+/* Footer - pied de page */
+footer {
 }
