@@ -1,0 +1,117 @@
+.navbar-right {
+    margin-right : 0;
+}
+
+#language {
+    vertical-align : middle;
+    margin : 15px 15px;
+}
+
+header {
+    background-image : url('http://i.imgur.com/tjyLJQB.jpg');
+    background-repeat : no-repeat;
+    background-size : 100% auto ;
+}
+
+@media screen and (max-width: 1280px) {
+    header {
+        background-size : auto 100%;
+    }
+}
+
+header .intro-text {
+    padding-top : 150px;
+}
+
+header .btn {
+    min-width : 25%;
+}
+
+header .videos {
+    padding-top : 5%;
+    width : 25%;
+    margin : auto;
+}
+
+@media screen and (max-width: 1280px) {
+    header .videos {
+        width : 50%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header .videos {
+        width : 90%;
+    }
+}
+
+section#gallery {
+    background-color : black;
+    position : relative;
+    z-index : 100;
+}
+
+section#gallery .row {
+    margin-top : 25px;
+}
+
+section#gallery .portfolio-link {
+}
+
+section#gallery .portfolio-link img {
+}
+
+section#gallery .portfolio-hover {
+    position : absolute;
+    top : 0;
+    left : 0;
+    font-size : 36px;
+    width : 100%;
+    height : 100%;
+    padding-top : 50px;
+    text-align : center;
+    vertical-align : bottom;
+}
+
+section#gallery .portfolio-hover:hover {
+    opacity : 0.5;
+}
+
+section#choose {
+    background-color : #a487eb;
+}
+
+section#choose .icon {
+    width : 70%;
+    z-index : 1000;
+    position : relative;
+    line-height : 1em;
+    vertical-align : top;
+    margin-top : 0.30em;
+}
+
+section#about {
+    background-color : #cc333f;
+}
+
+section#about  .timeline-image i {
+    height : 150px;
+    line-height : 150px;
+    margin-top : 5px;
+}
+
+section#about .timeline-twitter .timeline-panel {
+    padding : 0 0;
+}
+
+section#about .timeline-facebook .timeline-panel {
+    padding : 0 0;
+}
+
+section#about .timeline-adress ul {
+    list-style-type : none;
+}
+
+section#team {
+    background-color : #222;
+}
