@@ -79,16 +79,8 @@ $(function() {
                     },
 
                     link : "http://i.imgur.com/uVo4jAE.jpg"
-                }, {
-                    title : "El Téide",
-                    description : {
-                        fr : "Bleue, charolaise",
-                        en : "Bleue, charolaise",
-                        ger : "Bleue, charolaise"
-                    },
-
-                    link : "http://i.imgur.com/sbvWmBx.jpg"
-                }, {
+                },
+                {
                     title : "Automne",
                     description : {
                         fr : "Bleue, charolaise",
