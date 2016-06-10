@@ -292,6 +292,15 @@ $(function() {
                                 ger : "Surprise"
                             },
                             icon : "http://i.imgur.com/G0l1aWz.png"
+                        },
+                        {
+                            id : "Saint Valentin",
+                            name : {
+                                fr : "saint valentin",
+                                en : "Surprise",
+                                ger : "Surprise"
+                            },
+                            icon : "http://i.imgur.com/PCeSnD4.jpg"
                         }
                     ]
                 }
